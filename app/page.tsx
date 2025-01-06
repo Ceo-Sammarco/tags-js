@@ -13,18 +13,18 @@ export default function LandingPage() {
    return( <>
       <AppBar className="bg-black h-[81px]">
          <section className="flex items-center justify-center h-full">
-            <SignedOut>
+            {/* <SignedOut>
                <SignInButton />
             </SignedOut>
             <SignedIn>
                <UserButton />
-            </SignedIn>
+            </SignedIn> */}
          </section>
 
-         {/* <Avatar>
+         <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
-         </Avatar> */}
+         </Avatar>
 
          <Link href={'/signin'}>Sign in[]</Link>
       </AppBar>

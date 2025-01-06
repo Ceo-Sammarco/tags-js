@@ -26,7 +26,7 @@ type RootLayout_props = {
 
 export default function RootLayout( { children }: Readonly<RootLayout_props> ) {
    return( <>
-      <ClerkProvider>
+      {/* <ClerkProvider> */}
          <html lang="en">
             <body className={`
                ${geistSans.variable} ${geistMono.variable} antialiased
@@ -35,6 +35,6 @@ export default function RootLayout( { children }: Readonly<RootLayout_props> ) {
                { children }
             </body>
          </html>
-      </ClerkProvider>
+      {/* </ClerkProvider> */}
    </> );
 }
