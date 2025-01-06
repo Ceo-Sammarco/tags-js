@@ -1,5 +1,6 @@
 
 
+import { LoadingSpinner } from "@/clb-js/ui/LoadingSpinner";
 import MidiaCard from "@/clb-js/ui/MidiaSlider";
 import img0 from "@/public/pix/i0 (1).jpg";
 import img1 from "@/public/pix/i0 (2).jpg";
@@ -16,9 +17,10 @@ const
 
 export default function SliderPage() {
    return( <>
-   <div className="flex flex-col items-center justify-center w-[50dvw] h-[50dwv] m-auto">
-      {/* <MidiaCard userName="NadiaFans" images={[ img0.src, img1.src, img2.src, ]}/> */}
-      <MidiaCard userName="NadiaFans" images={[ imgs.a, imgs.b, imgs.c, ]}/>
-   </div>
+      <div className="flex flex-col items-center justify-center w-[50dvw] h-[50dwv] m-auto">
+         {/* <MidiaCard userName="NadiaFans" images={[ img0.src, img1.src, img2.src, ]}/> */}
+         <MidiaCard userName="NadiaFans" images={[ imgs.a, imgs.b, imgs.c, ]}/>
+      </div>
+      <LoadingSpinner />
    </> );
 }
