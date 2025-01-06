@@ -56,7 +56,8 @@ export default function MidiaSLider( { ...props }: MidiaSlider_props ) {
          <div className="relative aspect-[3/2]">
             {
                IsLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10">
+                  <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10"
+                  >
                      <Loader2 className="h-8 w-8 animate-spin" />
                   </div>
                )
@@ -64,7 +65,8 @@ export default function MidiaSLider( { ...props }: MidiaSlider_props ) {
             <img
                src={ props.images[CurrentMidiaIndex] }
                alt={`Image ${CurrentMidiaIndex + 1}`}
-               className="w-full h-full object-cover"
+               // className="w-full h-full object-cover"
+               className="w-auto h-full mx-auto my-0 object-cover"
                onLoad={ Options.handleImageLoad }
             />
          </div>
