@@ -20,64 +20,72 @@ export type MidiaSlider_props = {
 };
 // export default function MidiaCard({ userName }: { userName: string }) {
 export default function MidiaSLider( { ...props }: MidiaSlider_props ) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+   const 
+      [ CurrentMidiaIndex, setCurrentMidiaIndex ] = useState( 0 )
+      ,
+      [ IsLoading, setIsLoading ] = useState( false )
+   ;
 
-  const goToPreviousImage = () => {
-    setIsLoading(true)
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex > 0 ? prevIndex - 1 : props.images.length - 1
-    )
-  }
-
-  const goToNextImage = () => {
-    setIsLoading(true)
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex < props.images.length - 1 ? prevIndex + 1 : 0
-    )
-  }
-
-  const handleImageLoad = () => {
-    setIsLoading(false)
-  }
-
-  return (
-    <Card className="w-full max-w-md mx-auto overflow-hidden">
-      <CardHeader className="h-[81px] flex items-center justify-center bg-primary text-primary-foreground">
-        <h2 className="text-2xl font-bold">{ props.userName }</h2>
-      </CardHeader>
-      <CardContent className="p-0 relative">
-        <div className="relative aspect-[3/2]">
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10">
-              <Loader2 className="h-8 w-8 animate-spin" />
-            </div>
-          )}
-          <img
-            src={ props.images[currentImageIndex] }
-            alt={`Image ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover"
-            onLoad={handleImageLoad}
-          />
-        </div>
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute left-2 top-1/2 -translate-y-1/2"
-          onClick={goToPreviousImage}
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute right-2 top-1/2 -translate-y-1/2"
-          onClick={goToNextImage}
-        >
-          <ChevronRight className="h-4 w-4" />
-        </Button>
-      </CardContent>
-    </Card>
-  )
+   const 
+      Options = {
+         goToPreviousImage: () => {
+            setIsLoading( true );
+            setCurrentMidiaIndex( prevIndex => 
+               prevIndex > 0 ? prevIndex - 1 : props.images.length - 1
+            );
+         }
+         ,
+         goToNextImage: () => {
+            setIsLoading( true );
+            setCurrentMidiaIndex( prevIndex => 
+               prevIndex < props.images.length - 1 ? prevIndex + 1 : 0
+            );
+         }
+         ,
+         handleImageLoad: () => {
+            setIsLoading( false );
+         }
+      }
+   ;
+  return( <>
+      <Card className="w-full max-w-md mx-auto overflow-hidden">
+         <CardHeader className="h-[81px] flex items-center justify-center bg-primary text-primary-foreground">
+         <h2 className="text-2xl font-bold">{ props.userName }</h2>
+         </CardHeader>
+         <CardContent className="p-0 relative">
+         <div className="relative aspect-[3/2]">
+            {
+               IsLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10">
+                     <Loader2 className="h-8 w-8 animate-spin" />
+                  </div>
+               )
+            }
+            <img
+               src={ props.images[CurrentMidiaIndex] }
+               alt={`Image ${CurrentMidiaIndex + 1}`}
+               className="w-full h-full object-cover"
+               onLoad={ Options.handleImageLoad }
+            />
+         </div>
+         <Button
+            variant="outline"
+            size="icon"
+            className="absolute left-2 top-1/2 -translate-y-1/2"
+            onClick={ Options.goToPreviousImage }
+         >
+            <ChevronLeft className="h-4 w-4" />
+         </Button>
+         <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-2 top-1/2 -translate-y-1/2"
+            onClick={ Options.goToNextImage }
+         >
+            <ChevronRight className="h-4 w-4" />
+         </Button>
+         </CardContent>
+      </Card>
+   </> )
 }
 
