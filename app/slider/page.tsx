@@ -19,7 +19,7 @@ export default function SliderPage() {
    return( <>
       <div className="flex flex-col items-center justify-center w-[50dvw] h-[50dwv] m-auto">
          {/* <MidiaCard userName="NadiaFans" images={[ img0.src, img1.src, img2.src, ]}/> */}
-         <MidiaCard userName="NadiaFans" images={[ imgs.a, imgs.b, imgs.c, ]}/>
+         <MidiaCard userName="NadiaFans" images={ Object.values( imgs ).map( r => r ) }/>
       </div>
       <LoadingSpinner />
    </> );
