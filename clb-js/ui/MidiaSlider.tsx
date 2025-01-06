@@ -48,7 +48,7 @@ export default function MidiaSLider( { ...props }: MidiaSlider_props ) {
       }
    ;
   return( <>
-      <Card className="w-full max-w-md mx-auto overflow-hidden">
+      <Card className="w-full max-w-md mx-auto overflow-hidden rounded-lg">
          <CardHeader className="h-[81px] flex items-center justify-center bg-primary text-primary-foreground">
          <h2 className="text-2xl font-bold">{ props.userName }</h2>
          </CardHeader>
