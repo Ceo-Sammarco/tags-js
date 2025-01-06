@@ -53,7 +53,15 @@ export default function MidiaSLider( { ...props }: MidiaSlider_props ) {
          <h2 className="text-2xl font-bold">{ props.userName }</h2>
          </CardHeader>
          <CardContent className="p-0 relative">
-         <div className="relative aspect-[3/2]">
+         <div className="relative aspect-[3/2]"
+            style={{
+               backgroundImage: `url( "${ props.images[CurrentMidiaIndex] }" )`,
+               backgroundColor: "#fff5",
+               backgroundBlendMode: "overlay",
+               backgroundSize: "cover",
+               backgroundRepeat: "no-repeat",
+            }}
+         >
             {
                IsLoading && (
                   <div className="absolute inset-0 flex items-center justify-center bg-background/80 z-10"
